@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basics</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 500px;
+            background-color: #ddd;
+            text-align: center;
+            margin: 20px;
+            display: inline-block;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Vue!</h1>
+    <div id="app">
+        
+        <h2> - Conditional Rendering & List in Vue.js</h2>
+        <!-- conditional rendering vue -->
+        <div v-if="isShowing">
+
+            <!-- listView in vue -->
+            <div v-for="movie in movies">
+                <h3>{{movie.title}}</h3>
+                <p>Description: {{movie.description}}</p>
+            </div>
+         
+        </div>
+
+        <div v-else>
+            <h3>Movie is Not Showing</h3>        
+        </div>
+
+       
+        <button @click="showMovie">{{showMovieText}}</button>
+
+        <br>
+        <h2> - Mouse Event in Vue.js</h2>
+        <div @mouseover="mouseOver" @mouseleave="mouseLeave" @dblclick="doubleClick" @mousemove="mouseMove" 
+        class="box">
+            {{mouseOverText}}
+            <br>
+            <br>Offset: X{{mouseOffsetX}} - Y{{mouseOffsetY}}
+        </div>
+
+        <h2> - Attribute Binding in Vue.js</h2>
+
+        <a v-bind:href="loginPageUrl">Go to Login Page</a>
+
+    </div>
+
+
+
+    
+    
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+ <!-- <button v-on:click="title= 'The Last of US', description = 'Very popular series'" >Change Title</button> -->
+
+        <!-- <button v-on:click="title = title.toUpperCase()">To Uppercase</button> -->
+
+        <!-- <button v-on:click="changeTitle">Change Title</button> -->
+        <!-- <button v-on:click="changeDescription('The: Batman', 'DC Universe')">Change Description</button> -->
+
+        <!-- directive mouse event in Vue -->
