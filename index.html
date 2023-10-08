@@ -33,7 +33,7 @@
         <div v-if="isShowing">
 
             <!-- list in vue -->
-            <div v-for="movie in movies" :class="{fav: movie.isFavorite}">
+            <div v-for="movie in favoriteMovies" :class="{fav: movie.isFavorite}">
                 <img :src="movie.img" :alt="movie.title">
                 <h3>{{movie.title}}</h3>
                 <p>Description: {{movie.description}}</p>
@@ -51,7 +51,7 @@
         <p>Total favorite movies {{totalFavoriteMovies}}</p>
        
         <button @click="showMovie">{{showMovieText}}</button>
-
+        
 
         <br>
         
@@ -65,7 +65,7 @@
 
         <h2> - Attribute Binding in Vue.js</h2>
 
-        <a v-bind:href="loginPageUrl">Go to Login Page</a>
+        <a v-bind:href="moviePageUrl">Go to TMDB Movie Review</a>
 
     </div>
 

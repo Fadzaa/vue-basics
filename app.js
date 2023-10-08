@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      loginPageUrl: "login.html",
+      moviePageUrl: "https://www.themoviedb.org",
       isShowing: true,
       showMovieText: "Hide Movie",
       mouseOverText: "Mouse Over",
