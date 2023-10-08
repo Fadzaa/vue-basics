@@ -14,6 +14,14 @@
             display: inline-block;
 
         }
+        img {
+            width: 100px;
+            height: 100px; 
+        }
+
+        .fav {
+            background-color: lightgrey;
+        }
     </style>
 </head>
 <body>
@@ -21,13 +29,15 @@
     <div id="app">
         
         <h2> - Conditional Rendering & List in Vue.js</h2>
-        <!-- conditional rendering vue -->
+       
         <div v-if="isShowing">
 
-            <!-- listView in vue -->
-            <div v-for="movie in movies">
+            <!-- list in vue -->
+            <div v-for="movie in movies" :class="{fav: movie.isFavorite}">
+                <img :src="movie.img" :alt="movie.title">
                 <h3>{{movie.title}}</h3>
                 <p>Description: {{movie.description}}</p>
+                <button v-on:click="toggleFavorite(movie)">Favourite</button>
             </div>
          
         </div>
@@ -36,10 +46,15 @@
             <h3>Movie is Not Showing</h3>        
         </div>
 
+        <br>
+
+        <p>Total favorite movies {{totalFavoriteMovies}}</p>
        
         <button @click="showMovie">{{showMovieText}}</button>
 
+
         <br>
+        
         <h2> - Mouse Event in Vue.js</h2>
         <div @mouseover="mouseOver" @mouseleave="mouseLeave" @dblclick="doubleClick" @mousemove="mouseMove" 
         class="box">
